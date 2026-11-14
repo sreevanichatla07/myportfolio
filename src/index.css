@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-color: #0aa8f0 #070d1a;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  body {
+    @apply bg-midnight-950 text-gray-200 font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-electric-500/30 text-electric-100;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-midnight-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-electric-700/50 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-electric-600/70;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-midnight-800/60 backdrop-blur-xl border border-electric-500/15 rounded-2xl;
+  }
+  .glass-card-hover {
+    @apply transition-all duration-300 hover:border-electric-400/40 hover:shadow-[0_0_30px_-5px_rgba(10,168,240,0.3)] hover:bg-midnight-700/60;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-electric-300 via-cyan-glow to-electric-500 bg-clip-text text-transparent;
+  }
+  .section-heading {
+    @apply font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white;
+  }
+  .section-subheading {
+    @apply text-electric-300/80 text-sm uppercase tracking-[0.3em] font-medium;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-electric-500 to-cyan-glow text-midnight-950 font-semibold transition-all duration-300 hover:shadow-[0_0_25px_-3px_rgba(34,211,238,0.6)] hover:scale-[1.03] active:scale-95;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-electric-500/30 text-electric-200 font-medium transition-all duration-300 hover:border-electric-400/60 hover:bg-electric-500/10 hover:shadow-[0_0_20px_-5px_rgba(10,168,240,0.4)] active:scale-95;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .circuit-grid {
+    background-image:
+      linear-gradient(rgba(10, 168, 240, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10, 168, 240, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
